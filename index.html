@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+   <div style="display: flex;align-items: center; justify-content: center; flex-direction: row">
+       <img src="imr1.jpg" id="kadr" height="80">
+
+</center>
+<center>
+ <div style="display: flex;align-items: center; justify-content: center; flex-direction: row">
+     <img src="play.jpg" width="200" onclick="play()" >
+     <img src="pause.png" width="175" onclick="pause()">
+     <img src="stop.jpg" onclick="stop()">
+</center>
+<audio src="acdc_back_in_black-namobilu.com.mp3" id="mainzvuk"></audio>
+</body>
+<script>
+i=1
+    timer1=undefined
+    function play() {
+    document.getElementById('mainzvuk').play()
+        clearInterval(timer1)
+        timer1=setInterval(function () {
+        i=i+1
+            if (i>7){
+            i=1
+            }
+            if (i==1){
+                document.getElementById('kadr').src='imr1.jpg'
+            }
+            if(i==2){
+                document.getElementById('kadr').src='imr2.jpg'
+            }
+            if(i==3){
+                document.getElementById('kadr').src='imr3.jpg'
+            }
+            if(i==4){
+                document.getElementById('kadr').src='imr4.jpg'
+            }
+            if(i==5){
+                document.getElementById('kadr').src='imr5.jpg'
+            }
+            if(i==6){
+                document.getElementById('kadr').src='imr6.jpg'
+            }
+            if(i==7){
+                document.getElementById('kadr').src='imr7.jpg'
+            }
+        },150)
+        
+    }
+    function pause() {
+    document.getElementById('mainzvuk').pause()
+    clearInterval(timer1)
+        
+    }
+    function stop() {
+    document.getElementById('mainzvuk')
+    clearInterval(timer1)
+        i=1
+        document.getElementById('kadr').src='imr1.jpg'
+    }
+</script>
+</html>
